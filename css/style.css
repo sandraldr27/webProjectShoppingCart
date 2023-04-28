@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-}
+}     
 
 body {
     background-color: #242430;
@@ -23,7 +22,7 @@ body {
     display: flex;
     align-items: center;
     min-height: 70vh;
-}
+}    
 
 .swiper-slide {
     padding: 0 80px 50px 80px;
@@ -38,7 +37,7 @@ body {
 
 .swiper-button-next::after {
     font-size: 25px;
-}
+}  
 
 .swiper-button-prev {
     color: #FEFFFF;
@@ -57,35 +56,36 @@ body {
     background-color: #7270EC;
 }    
 
-.menu {
+.menu-container {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
+    right: 30px;  
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
-}
+}    
 
 .logo {
     font-size: 25px;
     color: #7270EC;
     text-transform: uppercase;
     font-weight: 800;
+    margin-left: 30px;
 }  
 
 .menu .navbar ul li {
     position: relative;
-    float: left;
+    float:left;
 }
 
 .menu .navbar ul li a {
     font-size: 18px;
     padding: 20px;
     color: #FEFFFF;
-    display:block;
-}   
+    display: block;
+}     
 
 .menu .navbar ul li a:hover {
     color: #7270EC;
@@ -106,7 +106,7 @@ body {
 
 .submenu {
     position: relative;
-}
+}   
 
 .submenu #carrito {
     display: none;
@@ -193,7 +193,7 @@ th, td {
     padding: 10px 25px;
     border-radius: 25px;
     margin-top: 40px;
-}
+}  
 
 .btn-1:hover {
     background-color: #6C69F9;
@@ -251,7 +251,7 @@ hr {
 
 .products {
     padding: 50px 0;
-}
+}  
 
 .products h2 {
     font-size: 50px;
@@ -322,10 +322,10 @@ hr {
 .link p {
     color:#747B8F;
     font-size: 16px;
-}  /*Revisado hasta aquí*/
+}  
 
 @media(max-width:991px) {
-
+/*OK Revisado*/
     .menu {
         padding: 20px;
     }
@@ -368,7 +368,7 @@ hr {
     }
 
     .header-content {
-        padding: 200px 0 50px 0;
+        padding: 100px 0 50px 0;
     }
 
     .header-info {
@@ -403,7 +403,7 @@ hr {
 
     .btn-1 {
         margin: 20px 0;
-    }
+    }  
 
     .promos {
         padding: 30px;

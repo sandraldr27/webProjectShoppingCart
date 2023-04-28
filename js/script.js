@@ -10,7 +10,7 @@ var swiper = new Swiper(".mySwiper-1", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev"
     }
-})
+});
 
 var swiper = new Swiper(".mySwiper-2", {
     slidesPerView: 3,
@@ -42,9 +42,9 @@ const elemetos3 = document.getElementById('lista-3');
 const lista = document.querySelector('#lista-carrito tbody');
 const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
 
-cargarEventListenners();
+cargarEventListeners();
 
-function cargarEventListenners() {
+function cargarEventListeners() {
     elemetos1.addEventListener('click', comprarElemento);
     elemetos2.addEventListener('click', comprarElemento);
     elemetos3.addEventListener('click', comprarElemento);
@@ -66,7 +66,7 @@ function leerDatosElemento(elemento) {
         imagen: elemento.querySelector('img').src,
         titulo: elemento.querySelector('h3').textContent,
         precio: elemento.querySelector('.precio').textContent,
-        id: elemento.querySelector('a').getAttribute('data-ic')
+        id: elemento.querySelector('a').getAttribute('data-id')
     }
 
     insertarCarrito(infoElemento);
@@ -77,21 +77,20 @@ function insertarCarrito(elemento){
     const row = document.createElement('tr');
     row.innerHTML = `
         <td>
-        <img src="${elemento.imagen}" width=100>
+            <img src="${elemento.imagen}" width=100 >
         </td>
 
         <td>
-        ${elemento.titulo}
+            ${elemento.titulo}
         </td>
 
         <td>
-        ${elemento.precio}
+            ${elemento.precio}
         </td>
 
         <td>
-        <a href="#" class="borrar" data-id="${elemento.id}">
+            <a href="#" class="borrar" data-id="${elemento.id}">X</a>
         </td>
-
         `;   
 
     lista.appendChild(row);
@@ -108,4 +107,11 @@ function eliminarElemento(e) {
         elemento = e.target.parentElement.parentElement;
         elementoId = elemento.querySelector('a').getAttribute('data-id');
     }
+}
+
+function vaciarCarrito() {
+    while(lista.firstChild) {
+        lista.removeChild(lista.firstChild);
+    }
+    return false;
 }
